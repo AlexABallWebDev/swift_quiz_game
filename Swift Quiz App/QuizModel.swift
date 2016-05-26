@@ -87,7 +87,85 @@ public class QuizModel {
         return nil
     }
     
+    /// Returns true if the number of questions answered has reached or exceeded
+    /// the number of questions in this quiz.
+    public func isGameOver() -> Bool {
+        return numQuestionsAnswered >= numQuestions
+    }
     
+    /// This method advances currentQuestion by 1 (to the next question).
+    /// Returns true if successful, false if the current question is the
+    /// last question.
+    public func nextQuestion() -> Bool {
+        
+        //if this is the last question, do not advance.
+        if currentQuestionNum >= numQuestions - 1 {
+            return false
+        }
+        
+        currentQuestionNum += 1
+        return true
+    }
+    
+    /// This method decreases currentQuestion by 1 (to the previous question).
+    /// Returns true if successful, false if the current question is the
+    /// first question.
+    public func previousQuestion() -> Bool {
+        
+        //if this is the last question, do not advance.
+        if currentQuestionNum <= 0 {
+            return false
+        }
+        
+        currentQuestionNum -= 1
+        return true
+    }
+    
+    /// This method answers the current question with the given answer.
+    /// It will then try to advance to the next question. This method will
+    /// return true if the answer matches the actual correct answer for the 
+    /// question, false otherwise.
+    ///
+    /// - parameters
+    ///     - answer: The answer to be given to the current question.
+    public func answerQuestion(answer: Bool) -> Bool? {
+        
+        //if the game is over, return nil.
+        if isGameOver() {
+            return nil
+        }
+        
+        //assume the user is wrong
+        var isCorrect = false
+        
+        //only increase the user's score if they have
+        //not answered this question before.
+        var unscored = false
+        
+        //if the question has not been answered yet,
+        //increment numQuestionsAnswered.
+        if questions[currentQuestionNum].answer != nil {
+            unscored = true
+            numQuestionsAnswered += 1
+        }
+        
+        //if the user's answer matches the correct answer, increase their score
+        //and set isCorrect to true.
+        if questions[currentQuestionNum].answerQuestion(answer) {
+            isCorrect = true
+            
+            //if the question has not been answered already, increase score.
+            if unscored {
+                score += 1
+            }
+        }
+        
+        //advance to the next question.
+        nextQuestion()
+        
+        //return true if the user was correct, false otherwise.
+        return isCorrect
+    }
 }
 
 
