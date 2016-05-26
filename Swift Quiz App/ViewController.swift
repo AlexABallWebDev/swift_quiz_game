@@ -10,9 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // The QuizModel for this quiz.
+    var quizModel: QuizModel! = nil
+    
+    // The textfield for the question text
+    @IBOutlet weak var questionText: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // create a new quiz
+        quizModel = QuizModel()
+        
+        //show the first question
+        questionText.text = quizModel.getCurrentQuestionText()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +38,13 @@ class ViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
 
-
+    func updateScreen() {
+        
+        if quizModel.isCurrentQuestionAnswered() && false {
+            //handle case where question was already answered
+        } else {
+            
+        }
+    }
 }
 
