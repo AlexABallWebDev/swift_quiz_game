@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -27,9 +27,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="True"/>
-                                <connections>
-                                    <action selector="showMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oay-76-A1R"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEb-Fx-a8O">
                                 <rect key="frame" x="247" y="60" width="106" height="21"/>
@@ -43,9 +40,6 @@
                                 <color key="backgroundColor" red="1" green="0.82164105195905623" blue="0.61806591651313703" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="False"/>
-                                <connections>
-                                    <action selector="showMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="UeI-HT-aIo"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adg-fj-NYR">
                                 <rect key="frame" x="20" y="428" width="160" height="105"/>
@@ -57,8 +51,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Previous"/>
                                 <connections>
-                                    <action selector="handlePreviousButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="UrN-Ij-Pvs"/>
-                                    <action selector="showMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="yLq-UR-yYo"/>
+                                    <action selector="handlePreviousButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="7IQ-Xg-aWy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Already Answered?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7X-TD-xjE">
@@ -74,8 +67,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="handleNextButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Cj-1b-4kd"/>
-                                    <action selector="showMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="YX3-dw-T9c"/>
+                                    <action selector="handleNextButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="7ZY-L5-azp"/>
                                 </connections>
                             </button>
                         </subviews>
