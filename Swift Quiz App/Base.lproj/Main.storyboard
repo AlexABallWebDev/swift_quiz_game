@@ -27,6 +27,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="True"/>
+                                <connections>
+                                    <action selector="answerTrue" destination="BYZ-38-t0r" eventType="touchUpInside" id="1y3-Lx-k43"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEb-Fx-a8O">
                                 <rect key="frame" x="247" y="60" width="106" height="21"/>
@@ -40,6 +43,9 @@
                                 <color key="backgroundColor" red="1" green="0.82164105195905623" blue="0.61806591651313703" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="False"/>
+                                <connections>
+                                    <action selector="answerFalse" destination="BYZ-38-t0r" eventType="touchUpInside" id="DHp-bp-hxX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adg-fj-NYR">
                                 <rect key="frame" x="20" y="428" width="160" height="105"/>

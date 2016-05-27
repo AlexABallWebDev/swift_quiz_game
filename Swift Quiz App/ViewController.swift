@@ -61,19 +61,81 @@ class ViewController: UIViewController {
         quizModel.nextQuestion()
         updateScreen()
     }
+    
+    /// This method answers true to the current question.
+    @IBAction func answerTrue() {
+        let isCorrect = quizModel.answerQuestion(true)
+        
+        if isCorrect == nil {
+            //do nothing if the game is over.
+        }
+        if isCorrect! {
+            //display a positive message
+            showMessage("Correct!")
+        } else {
+            //display a negative message
+            showMessage("Wrong!")
+        }
+        
+        //display the next question.
+        updateScreen()
+    }
+    
+    /// This method answers false to the current question.
+    @IBAction func answerFalse() {
+        let isCorrect = quizModel.answerQuestion(false)
+        
+        if isCorrect == nil {
+            //do nothing if the game is over.
+        }
+        if isCorrect! {
+            //display a positive message
+            showMessage("Correct!")
+        } else {
+            //display a negative message
+            showMessage("Wrong!")
+        }
+        
+        //display the next question.
+        updateScreen()
+    }
+    
+    /// This method displays an alert with the given message to the user.
+    ///
+    /// - parameters
+    ///     - message: The message to be displayed.
+    func showMessage(message: String) {
+        let alertController = UIAlertController(title: "Quiz App", message:
+            message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
 
-
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     /// This method updates the screen with the current question.
     func updateScreen() {
         
-        if quizModel.isCurrentQuestionAnswered() && false {
-            //handle case where question was already answered
+        if quizModel.isCurrentQuestionAnswered() {
+            // if the question was already answered, display text.
+            if quizModel.isCurrentQuestionAnsweredCorrectly()! {
+                // handle case where question was correctly answered.
+                isAnsweredText.text = "This question was correctly answered."
+            } else {
+                // handle case where question was incorrectly answered.
+                isAnsweredText.text = "This question was incorrectly answered."
+            }
         } else {
-            //handle case where unanswered question is displayed
-            questionText.text = quizModel.getCurrentQuestionText()
+            // if the question was not answered yet, hide the text.
+            isAnsweredText.text = ""
         }
         
-        //if game is over, switch to score summary view.
+        // display question.
+        questionText.text = quizModel.getCurrentQuestionText()
+        
+        // if game is over, switch to score summary view.
+        if quizModel.isGameOver() {
+            
+        }
     }
 }
 
