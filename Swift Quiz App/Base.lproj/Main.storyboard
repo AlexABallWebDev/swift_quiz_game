@@ -113,11 +113,63 @@
                         <outlet property="previousButton" destination="8bC-Xf-vdC" id="6bf-7u-Zd1"/>
                         <outlet property="questionText" destination="lEb-Fx-a8O" id="1I6-53-0I3"/>
                         <outlet property="trueButton" destination="8bC-Xf-vdC" id="gHw-Ww-LqT"/>
+                        <segue destination="dRV-E3-BDF" kind="show" identifier="scoreSummary" id="8kB-2B-HEQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="245" y="399"/>
+        </scene>
+        <!--Score Summary View Controller-->
+        <scene sceneID="34l-d3-JBB">
+            <objects>
+                <viewController id="dRV-E3-BDF" customClass="ScoreSummaryViewController" customModule="Swift_Quiz_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="735-km-A09"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nnh-kB-jT2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tAq-RH-v0h">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNI-q5-nnG">
+                                <rect key="frame" x="278" y="215" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pa1-RC-Rdj">
+                                <rect key="frame" x="239" y="28" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Questions Answered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhV-20-hhh">
+                                <rect key="frame" x="178" y="244" width="244" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SNI-q5-nnG" firstAttribute="centerX" secondItem="tAq-RH-v0h" secondAttribute="centerX" id="18S-uk-QSk"/>
+                            <constraint firstItem="bhV-20-hhh" firstAttribute="centerX" secondItem="tAq-RH-v0h" secondAttribute="centerX" id="8Ao-5I-5gw"/>
+                            <constraint firstItem="Pa1-RC-Rdj" firstAttribute="centerX" secondItem="tAq-RH-v0h" secondAttribute="centerX" id="Iez-UP-dPb"/>
+                            <constraint firstItem="SNI-q5-nnG" firstAttribute="top" secondItem="Pa1-RC-Rdj" secondAttribute="bottom" constant="166" id="kCj-cL-y85"/>
+                            <constraint firstItem="bhV-20-hhh" firstAttribute="top" secondItem="SNI-q5-nnG" secondAttribute="bottom" constant="8" id="qhS-im-ga5"/>
+                            <constraint firstItem="Pa1-RC-Rdj" firstAttribute="top" secondItem="735-km-A09" secondAttribute="bottom" constant="8" id="tWT-4i-L7l"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ScoreTextField" destination="SNI-q5-nnG" id="K1j-gq-gXE"/>
+                        <outlet property="numQuestionsAnsweredField" destination="bhV-20-hhh" id="kkt-tZ-YaB"/>
+                        <outlet property="scoreTextField" destination="SNI-q5-nnG" id="T6a-b5-74S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Axq-xn-IxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1019" y="399"/>
         </scene>
     </scenes>
 </document>

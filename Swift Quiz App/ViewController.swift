@@ -9,6 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // Structure containing static information.
+    struct Static {
+        // IDs used for the segue between the main scene
+        // and the score summary scene.
+        static let scoreSummaryID: String = "scoreSummary"
+        static let scoreID: String = "score"
+        static let numQuestionsAnsweredID: String = "numQuestionsAnswered"
+    }
 
     // The QuizModel for this quiz.
     var quizModel: QuizModel! = nil
@@ -66,10 +75,17 @@ class ViewController: UIViewController {
     @IBAction func answerTrue() {
         let isCorrect = quizModel.answerQuestion(true)
         
+        // Due to an error when using a segue to get to the next scene,
+        // an alert cannot be shown on the last question.
+        // Therefore, if the game is over, do not display a message.
+        if quizModel.isGameOver() {
+            updateScreen()
+            return
+        }
+        
         if isCorrect == nil {
             //do nothing if the game is over.
-        }
-        if isCorrect! {
+        } else if isCorrect! {
             //display a positive message
             showMessage("Correct!")
         } else {
@@ -85,10 +101,17 @@ class ViewController: UIViewController {
     @IBAction func answerFalse() {
         let isCorrect = quizModel.answerQuestion(false)
         
+        // Due to an error when using a segue to get to the next scene,
+        // an alert cannot be shown on the last question.
+        // Therefore, if the game is over, do not display a message.
+        if quizModel.isGameOver() {
+            updateScreen()
+            return
+        }
+        
         if isCorrect == nil {
             //do nothing if the game is over.
-        }
-        if isCorrect! {
+        } else if isCorrect! {
             //display a positive message
             showMessage("Correct!")
         } else {
@@ -105,6 +128,7 @@ class ViewController: UIViewController {
     /// - parameters
     ///     - message: The message to be displayed.
     func showMessage(message: String) {
+        
         let alertController = UIAlertController(title: "Quiz App", message:
             message, preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
@@ -114,6 +138,15 @@ class ViewController: UIViewController {
     
     /// This method updates the screen with the current question.
     func updateScreen() {
+        
+        // if game is over, switch to score summary view.
+        if quizModel.isGameOver() {
+            NSUserDefaults.standardUserDefaults().setObject(quizModel.score, forKey: Static.scoreID)
+            NSUserDefaults.standardUserDefaults().setObject(quizModel.numQuestionsAnswered, forKey: Static.numQuestionsAnsweredID)
+            
+            performSegueWithIdentifier(Static.scoreSummaryID, sender: self)
+            return
+        }
         
         if quizModel.isCurrentQuestionAnswered() {
             // if the question was already answered, display text.
@@ -131,11 +164,6 @@ class ViewController: UIViewController {
         
         // display question.
         questionText.text = quizModel.getCurrentQuestionText()
-        
-        // if game is over, switch to score summary view.
-        if quizModel.isGameOver() {
-            
-        }
     }
 }
 

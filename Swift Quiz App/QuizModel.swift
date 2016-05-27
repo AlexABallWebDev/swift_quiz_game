@@ -144,7 +144,7 @@ public class QuizModel {
         
         //if the question has not been answered yet,
         //increment numQuestionsAnswered.
-        if questions[currentQuestionNum].answer != nil {
+        if questions[currentQuestionNum].answer == nil {
             unscored = true
             numQuestionsAnswered += 1
         }
