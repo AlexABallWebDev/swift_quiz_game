@@ -18,41 +18,103 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xw-EI-AbR">
-                                <rect key="frame" x="63" y="315" width="224" height="105"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xw-EI-AbR">
+                                <rect key="frame" x="20" y="315" width="160" height="105"/>
+                                <color key="backgroundColor" red="1" green="0.82164105195905623" blue="0.61806591651313703" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="ZVr-KV-zaF"/>
+                                    <constraint firstAttribute="width" constant="160" id="ggC-1d-E5g"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="True"/>
                                 <connections>
                                     <action selector="showMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oay-76-A1R"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErY-mt-Yoy">
-                                <rect key="frame" x="295" y="315" width="242" height="105"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEb-Fx-a8O">
+                                <rect key="frame" x="247" y="60" width="106" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErY-mt-Yoy">
+                                <rect key="frame" x="420" y="315" width="160" height="105"/>
+                                <color key="backgroundColor" red="1" green="0.82164105195905623" blue="0.61806591651313703" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="False"/>
                                 <connections>
                                     <action selector="showMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="UeI-HT-aIo"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEb-Fx-a8O">
-                                <rect key="frame" x="247" y="60" width="106" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adg-fj-NYR">
+                                <rect key="frame" x="20" y="428" width="160" height="105"/>
+                                <color key="backgroundColor" red="1" green="0.82164105195905623" blue="0.61806591651313703" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="acF-ug-7Py"/>
+                                    <constraint firstAttribute="height" constant="105" id="pS5-2f-APG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Previous"/>
+                                <connections>
+                                    <action selector="handlePreviousButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="UrN-Ij-Pvs"/>
+                                    <action selector="showMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="yLq-UR-yYo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Already Answered?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7X-TD-xjE">
+                                <rect key="frame" x="218" y="249" width="164" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8N-Bg-3cd">
+                                <rect key="frame" x="420" y="428" width="160" height="105"/>
+                                <color key="backgroundColor" red="1" green="0.82164105195905623" blue="0.61806591651313703" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="handleNextButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Cj-1b-4kd"/>
+                                    <action selector="showMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="YX3-dw-T9c"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="ErY-mt-Yoy" secondAttribute="trailing" constant="43" id="28Q-sV-5H7"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Xw-EI-AbR" secondAttribute="bottom" constant="180" id="2o5-RI-zVf"/>
-                            <constraint firstItem="lEb-Fx-a8O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7ES-U8-W3s"/>
-                            <constraint firstItem="lEb-Fx-a8O" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="Nuy-dk-E9V"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ErY-mt-Yoy" secondAttribute="bottom" constant="180" id="Pb2-WO-A6k"/>
-                            <constraint firstItem="7Xw-EI-AbR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="43" id="nSS-Ch-NK6"/>
+                            <constraint firstItem="T8N-Bg-3cd" firstAttribute="top" secondItem="ErY-mt-Yoy" secondAttribute="bottom" constant="8" symbolic="YES" id="56Y-J8-a7v"/>
+                            <constraint firstItem="adg-fj-NYR" firstAttribute="top" secondItem="7Xw-EI-AbR" secondAttribute="bottom" constant="8" symbolic="YES" id="CZT-oh-sZI"/>
+                            <constraint firstItem="7Xw-EI-AbR" firstAttribute="top" secondItem="a7X-TD-xjE" secondAttribute="bottom" constant="45" id="HAS-xQ-ZhA"/>
+                            <constraint firstItem="ErY-mt-Yoy" firstAttribute="trailing" secondItem="T8N-Bg-3cd" secondAttribute="trailing" id="L8h-CN-8Ag"/>
+                            <constraint firstItem="7Xw-EI-AbR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="295" id="RZo-aj-qd4"/>
+                            <constraint firstItem="ErY-mt-Yoy" firstAttribute="baseline" secondItem="7Xw-EI-AbR" secondAttribute="baseline" id="SqI-RU-WTK"/>
+                            <constraint firstItem="7Xw-EI-AbR" firstAttribute="leading" secondItem="adg-fj-NYR" secondAttribute="leading" id="TJO-qv-9Bb"/>
+                            <constraint firstItem="ErY-mt-Yoy" firstAttribute="top" secondItem="a7X-TD-xjE" secondAttribute="bottom" constant="45" id="VI2-Xg-fd9"/>
+                            <constraint firstItem="adg-fj-NYR" firstAttribute="height" secondItem="ErY-mt-Yoy" secondAttribute="height" id="Wuk-ir-F0A"/>
+                            <constraint firstItem="a7X-TD-xjE" firstAttribute="centerX" secondItem="lEb-Fx-a8O" secondAttribute="centerX" id="Yea-OA-Dka"/>
+                            <constraint firstItem="adg-fj-NYR" firstAttribute="width" secondItem="ErY-mt-Yoy" secondAttribute="width" id="Z1E-fE-CUy"/>
+                            <constraint firstItem="7Xw-EI-AbR" firstAttribute="height" secondItem="adg-fj-NYR" secondAttribute="height" id="ZFC-xL-pGj"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="adg-fj-NYR" secondAttribute="leading" id="aTL-ea-3CG"/>
+                            <constraint firstItem="adg-fj-NYR" firstAttribute="height" secondItem="T8N-Bg-3cd" secondAttribute="height" id="f1I-Cq-9BN"/>
+                            <constraint firstItem="7Xw-EI-AbR" firstAttribute="trailing" secondItem="adg-fj-NYR" secondAttribute="trailing" id="fM2-kI-pcE"/>
+                            <constraint firstItem="ErY-mt-Yoy" firstAttribute="top" secondItem="7Xw-EI-AbR" secondAttribute="top" id="fbR-wm-E4P"/>
+                            <constraint firstItem="7Xw-EI-AbR" firstAttribute="width" secondItem="adg-fj-NYR" secondAttribute="width" id="ffA-gy-cuW"/>
+                            <constraint firstItem="lEb-Fx-a8O" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="k7i-sI-Dbd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T8N-Bg-3cd" secondAttribute="trailing" id="mA4-lq-Y1a"/>
+                            <constraint firstItem="lEb-Fx-a8O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oJf-bh-xhq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T8N-Bg-3cd" secondAttribute="bottom" constant="67" id="oOb-FE-bSc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="adg-fj-NYR" secondAttribute="bottom" constant="67" id="ssY-LY-mWB"/>
+                            <constraint firstItem="ErY-mt-Yoy" firstAttribute="leading" secondItem="T8N-Bg-3cd" secondAttribute="leading" id="v9t-WZ-bTt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="a7X-TD-xjE" secondAttribute="bottom" constant="330" id="wfu-sX-OEn"/>
+                            <constraint firstItem="adg-fj-NYR" firstAttribute="width" secondItem="T8N-Bg-3cd" secondAttribute="width" id="yls-DY-vHf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="falseButton" destination="8bC-Xf-vdC" id="pcK-qK-In6"/>
+                        <outlet property="isAnsweredText" destination="a7X-TD-xjE" id="E7u-9W-hYa"/>
+                        <outlet property="nextButton" destination="8bC-Xf-vdC" id="E5Z-55-qps"/>
+                        <outlet property="previousButton" destination="8bC-Xf-vdC" id="6bf-7u-Zd1"/>
                         <outlet property="questionText" destination="lEb-Fx-a8O" id="1I6-53-0I3"/>
+                        <outlet property="trueButton" destination="8bC-Xf-vdC" id="gHw-Ww-LqT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

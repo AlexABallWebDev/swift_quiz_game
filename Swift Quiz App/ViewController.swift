@@ -13,8 +13,24 @@ class ViewController: UIViewController {
     // The QuizModel for this quiz.
     var quizModel: QuizModel! = nil
     
+    // True button
+    @IBOutlet var trueButton: UIView!
+    
+    // False button
+    @IBOutlet var falseButton: UIView!
+    
+    // Previous button
+    @IBOutlet var previousButton: UIView!
+    
+    // Next button
+    @IBOutlet var nextButton: UIView!
+    
     // The textfield for the question text
     @IBOutlet weak var questionText: UILabel!
+    
+    // The textfield for a message if the question
+    // has already been answered.
+    @IBOutlet weak var isAnsweredText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +40,7 @@ class ViewController: UIViewController {
         quizModel = QuizModel()
         
         //show the first question
-        questionText.text = quizModel.getCurrentQuestionText()
+        updateScreen()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,19 +48,32 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func showMessage() {
-        let alertController = UIAlertController(title: "Welcome to My First App", message: "Hello World", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alertController, animated: true, completion: nil)
+    /// This method selects the previous question, then
+    /// updates the screen with the question text.
+    @IBAction func handlePreviousButton() {
+        quizModel.previousQuestion()
+        updateScreen()
+    }
+    
+    /// This method selects the previous question, then
+    /// updates the screen with the question text.
+    @IBAction func handleNextButton() {
+        quizModel.nextQuestion()
+        updateScreen()
     }
 
+
+    /// This method updates the screen with the current question.
     func updateScreen() {
         
         if quizModel.isCurrentQuestionAnswered() && false {
             //handle case where question was already answered
         } else {
-            
+            //handle case where unanswered question is displayed
+            questionText.text = quizModel.getCurrentQuestionText()
         }
+        
+        //if game is over, switch to score summary view.
     }
 }
 
