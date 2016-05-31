@@ -21,16 +21,16 @@ public class QuizModel {
         
         /// The full list of questions that could be asked.
         private static let fullQuestionList = [
-            Question(question: "1 true", correctAnswer: true),
-            Question(question: "2 false", correctAnswer: false),
-            Question(question: "3 true", correctAnswer: true),
-            Question(question: "4 true", correctAnswer: true),
-            Question(question: "5 true", correctAnswer: true),
-            Question(question: "6 true", correctAnswer: true),
-            Question(question: "7 true", correctAnswer: true),
-            Question(question: "8 true", correctAnswer: true),
-            Question(question: "9 true", correctAnswer: true),
-            Question(question: "10 true", correctAnswer: true)
+            Question(question: "Is water wet?", correctAnswer: true),
+            Question(question: "Is fire hot?", correctAnswer: true),
+            Question(question: "Is ice cold?", correctAnswer: true),
+            Question(question: "Is 5 greater than 6?", correctAnswer: false),
+            Question(question: "Can deer fly?", correctAnswer: false),
+            Question(question: "Is this app working?", correctAnswer: true),
+            Question(question: "Are puzzles puzzling?", correctAnswer: true),
+            Question(question: "Can dolphins breathe air?", correctAnswer: true),
+            Question(question: "Are potatoes fruits?", correctAnswer: false),
+            Question(question: "Is false equal to true?", correctAnswer: false)
         ]
     }
     
@@ -59,9 +59,22 @@ public class QuizModel {
         
         questions = [Question]()
         
-        //add random questions to questions.
-        for i in 0...2 {
-            questions.append(Static.fullQuestionList[i])
+        //simple array to track which questions have been 
+        //added to this game.
+        var chosenQuestionNums = [Int]()
+        
+        //add random questions to questions array.
+        for _ in 1...(numQuestions) {
+            //get a random number between 0 (inclusive) and the 
+            //number of elements in the full question 
+            //list (exclusive). Basically, pick a random question.
+            var questionNum = Int(arc4random_uniform(UInt32(Static.fullQuestionList.count)))
+            while chosenQuestionNums.contains(questionNum) {
+                questionNum = Int(arc4random_uniform(UInt32(Static.fullQuestionList.count)))
+            }
+            
+            chosenQuestionNums.append(questionNum)
+            questions.append(Static.fullQuestionList[questionNum])
         }
     }
     
