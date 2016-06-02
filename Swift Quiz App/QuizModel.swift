@@ -74,7 +74,7 @@ public class QuizModel {
             }
             
             chosenQuestionNums.append(questionNum)
-            questions.append(Static.fullQuestionList[questionNum])
+            questions.append(Static.fullQuestionList[questionNum].copyQuestion())
         }
     }
     
